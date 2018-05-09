@@ -1,5 +1,5 @@
 ## Travis CI: [![Build Status](https://travis-ci.com/TestowanieJAVA2017-2018Gr2/projekt2-Dwiecko.svg?token=XCrqgRzx7V6pckA6BkDA&branch=master)](https://travis-ci.com/TestowanieJAVA2017-2018Gr2/projekt2-Dwiecko)
-
+## BetterCodeHub [![BCH compliance](https://bettercodehub.com/edge/badge/Dwiecko/TestowanieJava?branch=master)](https://bettercodehub.com/)
 # Testowanie aplikacji JAVA 2017-2018
 ## Projekt 2 (Maven, JUnit oraz atrapy) 
 

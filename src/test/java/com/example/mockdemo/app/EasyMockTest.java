@@ -16,7 +16,7 @@ import com.example.mockdemo.messenger.MalformedRecipientException;
 import com.example.mockdemo.messenger.MessageService;
 import com.example.mockdemo.messenger.SendingStatus;
 
-public class EasyMockitoTest {
+public class EasyMockTest {
 
     private Messenger _messenger;
     private MessageService _serviceMock;
@@ -49,8 +49,9 @@ public class EasyMockitoTest {
         expect(_serviceMock.send(SERVERWITHSPECIALCHARS, CORRECTMESSAGE))
                            .andReturn(SendingStatus.SENDING_ERROR);
         replay(_serviceMock);
+        int result = _messenger.sendMessage(SERVERWITHSPECIALCHARS, CORRECTMESSAGE);
         
-		assertEquals(1, _messenger.sendMessage(SERVERWITHSPECIALCHARS, CORRECTMESSAGE));
+		assertEquals(1, result);
 		verify(_serviceMock);
 	}
     
@@ -87,7 +88,6 @@ public class EasyMockitoTest {
         replay(_serviceMock);
         
 		assertEquals(0, _messenger.sendMessage(CORRECTSERVER, CORRECTMESSAGE));
-		verify(_serviceMock);
     }
     
     @Test
@@ -99,7 +99,6 @@ public class EasyMockitoTest {
         replay(_serviceMock);
         
 		assertEquals(2, _messenger.sendMessage(INCORRECTSERVER, INCORRECTMESSAGE));
-		verify(_serviceMock);
     }
 
     @Test
@@ -111,7 +110,6 @@ public class EasyMockitoTest {
         replay(_serviceMock);
         
 		assertEquals(1, _messenger.testConnection(INCORRECTSERVER));
-		verify(_serviceMock);
     }
     
     @Test
@@ -123,7 +121,6 @@ public class EasyMockitoTest {
         replay(_serviceMock);
 
 		assertEquals(1, _messenger.testConnection(SERVERWITHSPECIALCHARS));
-		verify(_serviceMock);
     }
     
     @Test
@@ -136,6 +133,5 @@ public class EasyMockitoTest {
         replay(_serviceMock);
         
 		assertEquals(1, _messenger.testConnection("Server name"));
-		verify(_serviceMock);
 	}
 }

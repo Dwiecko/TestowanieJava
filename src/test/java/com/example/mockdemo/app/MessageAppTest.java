@@ -39,10 +39,10 @@ public class MessageAppTest {
 	}
 	
 	@Test
-	public void InvalidServerAndValidMessageReturns1() {
+	public void InvalidServerAndValidMessageReturns2() {
 		int invalidServerAndMessage = messenger.sendMessage(INVALID_SERVER, VALID_MESSAGE);
 
-		assertEquals(1, invalidServerAndMessage);
+		assertEquals(2, invalidServerAndMessage);
 	}
 	
 	@Test
